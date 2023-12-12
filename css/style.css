@@ -1,0 +1,289 @@
+:root {
+  --main-color:rgb(3,62,97)
+}
+;* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+ul,li {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 ,pre {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*header section*/
+header {
+  display:flex;
+  justify-content: space-between;
+  padding:10px 100px 10px 0;
+  background-color: rgb(62, 62, 65);
+  align-items: center;
+  color: #000
+}
+header h1 {
+  background-color: var(--main-color);
+  padding:10px 20px 10px 100px;
+}
+header nav {
+  display:flex;
+  justify-content: space-between;
+  gap:15px;
+}
+header nav a {
+ text-underline-offset: 8px;
+ font-size: 20px;
+ color:#000;
+ transition: all 0.5s;
+ overflow: hidden;
+}
+header nav a:hover {
+  color:rgb(3, 40, 61);
+  font-size: 21px;
+  overflow: hidden;
+
+}
+/*hero section*/
+.hero-banner > div {
+  background-image: url(../images/1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:35vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+.hero-banner > div > h2 {
+  margin:20px 100px;
+  background-color: var(--main-color);
+  padding:5px 20px;
+}
+/*main section*/
+.page-wrapper {
+  display: grid;
+  grid-template-columns:25% 75% ;
+  grid-template-rows:20% 60% 20% ;
+  grid-template-areas:" about about"
+  " work work"
+  " contact contact" ;
+  height:100vh;
+  padding:30px 30px 0 30px;
+  margin-top: 50px;
+  justify-content:center;
+  align-content: center;
+  
+}
+#about {
+  grid-area: about;
+}
+#work {
+  grid-area: work;
+}
+#contact {
+  grid-area: contact;
+}
+.page-section {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-content: center;
+  margin:5px 0
+}
+.about-content {
+  width:85%;
+  padding:0 20px;
+  color:var(--main-color)
+}
+.page-section h2 {
+  font-size: 50px;
+  line-height: 80px;
+  width:50%;
+  margin-left:30%;
+  color: var(--main-color)
+  
+}
+.page-section ul {
+  display:grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 250px 250px;
+  grid-template-areas: "hepta hepta"
+   " horiseon prework" ;
+  padding: 0 100px 0 20px;
+  gap: 10px;
+}
+#hepta{
+  grid-area: hepta;
+}
+#prework {
+  grid-area: prework;
+}
+#horiseon {
+  grid-area : horiseon;
+}
+#next {
+  grid-area: next;
+}
+.page-section ul li {
+  position: relative;
+  overflow: hidden;
+  transition: all .5s;
+}
+.page-section ul li .pic-holder {
+  overflow: hidden;
+  display: inline-block;
+  width:100%;
+  height:100%;
+}
+.page-section ul li .pic-holder:after {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,.7);
+  opacity: 1;
+  transition: all .5s;
+}
+.page-section ul li:hover  .pic-holder:after {
+  opacity: 0;
+  transition: all .5s;
+}
+.page-section ul li img {
+  width:100%;
+  height:140%;
+  transition: all .5s;
+}
+.page-section ul li:hover img {
+  transform:scale(1.05);
+  transition: all .5s;
+}
+.page-section ul li .project-title {
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+  background-color: rgba(0,0,0,.5);
+  padding: 10px 5px;
+  display: block;
+  width:100%;
+  color:#d8d6d6;
+}
+.line {
+  border-right: 4px solid rgb(3,62,97);
+  text-align: right;
+}
+.contact-content {
+  display: grid;
+  grid-template-columns: 25% 35% 20% 20% ;
+  grid-template-rows: 1fr ;
+  padding: 0 100px 0  20px;
+  align-items:center;
+}
+.contact-content div{
+  text-align: left;
+  color: var(--main-color);
+}
+.contact-content  a {
+  text-decoration: none;
+  color:var(--main-color);
+}
+.work {
+  margin-top:80px;
+}
+.contact {
+  margin-top:160px
+}
+@media only screen and (max-width:1200px) {
+  .contact-content {
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 80px 80px ;
+  }
+  .page-section .contact-h2 {
+    margin-left:20%;
+}
+}
+@media only screen and (max-width:1000px) {
+  header h1 {
+    padding:10px 20px 10px 70px;
+  }
+  header nav a {
+    text-underline-offset: 6px;
+    font-size: 18px;
+  }
+  .page-wrapper {
+    height:1200px;
+  }
+.page-section ul {
+  grid-template-columns: 1fr ;
+  grid-template-rows: 240px 240px 240px;
+  grid-template-areas: "hepta"
+   " horiseon ""prework" ;
+}
+.page-section h2 {
+  font-size: 40px;
+}
+.page-section .contact-h2 {
+  margin-left:15%;
+}
+}
+@media only screen and (max-width:750px) {
+  header nav {
+    display: none;
+  }
+    .hero-banner > div > h2 {
+      margin:20px 60px;
+      background-color: var(--main-color);
+      padding:5px 10px;
+    }
+  
+  .page-section ul {
+    grid-template-rows: 220px 220px 220px;
+  }
+  .page-section h2 {
+    font-size: 35px;
+    line-height: 60px;
+    width:50%;
+    margin-left:20%;
+  }
+  .page-section .contact-h2 {
+    margin-left:-5%;
+  }
+  .contact {
+    margin-top:100px
+  }
+}
+@media only screen and (max-width:600px) {
+  .page-section ul {
+    grid-template-rows: 200px 200px 200px;
+    padding: 0 40px 0 20px;
+  }
+  .contact-content {
+   display:flex;
+   justify-content:flex-start;
+   flex-wrap: wrap;
+   gap:0 40px
+  }
+  .contact {
+    margin-top:40px
+  }
+}
